@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Tip Calculator 💰</h1>
+
+    <form method="POST">
+        <input type="number" step="0.01" name="bill" placeholder="Total Bill" required>
+        <input type="number" name="tip" placeholder="Tip %" required>
+        <input type="number" name="people" placeholder="Number of People" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+        <h2>Each person pays: ${{ result }}</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>
